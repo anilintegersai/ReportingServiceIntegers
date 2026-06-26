@@ -1,0 +1,22 @@
+{
+  "appName": "Finance System",
+  "appIcon": "bi-currency-dollar",
+  "categories": [
+    {
+      "name": "P&L",
+      "icon": "bi-graph-up-arrow",
+      "reports": [
+        {
+          "id": "monthly-pnl",
+          "title": "Sales & Returns Overview",
+          "description": "Sales and returns analysis sample report",
+          "powerBIReportId": "ee6c80c6-be78-4d53-8e3a-a97c8bbebf61",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Finance", "Monthly"]
+        }
+      ]
+    }
+  ]
+}
