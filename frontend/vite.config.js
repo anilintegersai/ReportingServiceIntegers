@@ -9,4 +9,11 @@ export default defineConfig({
       '/api': 'http://localhost:8000',
     },
   },
+  define: {
+    __API_BASE__: JSON.stringify(
+      process.env.NODE_ENV === 'production'
+        ? 'https://insight-hub-api-mbmm.onrender.com'
+        : ''
+    ),
+  },
 })

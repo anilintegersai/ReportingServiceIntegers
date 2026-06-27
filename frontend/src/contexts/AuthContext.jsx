@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
+const API_BASE = typeof __API_BASE__ !== 'undefined' ? __API_BASE__ : ''
+
 const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
@@ -9,7 +11,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (!token) { setLoading(false); return }
-    fetch('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } })
+    fetch(`${API_BASE}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(u => setUser(u))
       .catch(() => { localStorage.removeItem('insight_token'); setToken(null) })
@@ -17,7 +19,7 @@ export function AuthProvider({ children }) {
   }, [token])
 
   async function login(username, password) {
-    const resp = await fetch('/api/auth/login', {
+    const resp = await fetch(`${API_BASE}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
@@ -29,7 +31,7 @@ export function AuthProvider({ children }) {
     const { access_token } = await resp.json()
     localStorage.setItem('insight_token', access_token)
     setToken(access_token)
-    const me = await fetch('/api/auth/me', {
+    const me = await fetch(`${API_BASE}/api/auth/me`, {
       headers: { Authorization: `Bearer ${access_token}` },
     }).then(r => r.json())
     setUser(me)

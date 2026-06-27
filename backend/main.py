@@ -6,7 +6,11 @@ app = FastAPI(title="Insight Hub API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://insight-hub-pt9s.onrender.com",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
