@@ -45,7 +45,7 @@ export function AuthProvider({ children }) {
 
   // Authenticated fetch — automatically attaches the Bearer token
   function authFetch(url, options = {}) {
-    return fetch(url, {
+    return fetch(`${API_BASE}${url}`, {
       ...options,
       headers: { ...options.headers, Authorization: `Bearer ${token}` },
     })
