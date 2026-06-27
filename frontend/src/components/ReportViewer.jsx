@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import * as pbi from 'powerbi-client'
+import { useAuth } from '../contexts/AuthContext'
 
 const powerbi = new pbi.service.Service(
   pbi.factories.hpmFactory,
@@ -8,6 +9,7 @@ const powerbi = new pbi.service.Service(
 )
 
 export default function ReportViewer({ appName, report }) {
+  const { authFetch } = useAuth()
   const containerRef = useRef(null)
   const embedRef = useRef(null)
   const [status, setStatus] = useState('loading')
@@ -29,7 +31,7 @@ export default function ReportViewer({ appName, report }) {
     setPages([])
     setActivePage(null)
     try {
-      const resp = await fetch(`/api/embed/token/${appName}/${report.id}`)
+      const resp = await authFetch(`/api/embed/token/${appName}/${report.id}`)
       if (!resp.ok) {
         const err = await resp.json()
         throw new Error(err.detail || 'Token request failed')

@@ -1,26 +1,27 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 import Sidebar from '../components/Sidebar'
 import ReportViewer from '../components/ReportViewer'
 
 export default function DashboardPage() {
   const { appName } = useParams()
+  const { authFetch } = useAuth()
   const [manifest, setManifest] = useState(null)
   const [selectedReport, setSelectedReport] = useState(null)
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetch(`/api/manifests/${appName}`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`No manifest found for '${appName}'`)
+    authFetch(`/api/manifests/${appName}`)
+      .then(r => {
+        if (!r.ok) throw new Error(`Access denied or manifest not found for '${appName}'`)
         return r.json()
       })
-      .then((data) => {
+      .then(data => {
         setManifest(data)
-        const first = data.categories[0]?.reports[0] ?? null
-        setSelectedReport(first)
+        setSelectedReport(data.categories[0]?.reports[0] ?? null)
       })
-      .catch((e) => setError(e.message))
+      .catch(e => setError(e.message))
   }, [appName])
 
   function handleFullscreen() {
@@ -28,14 +29,14 @@ export default function DashboardPage() {
   }
 
   function handleRefresh() {
-    setSelectedReport((r) => r ? { ...r } : r)
+    setSelectedReport(r => r ? { ...r } : r)
   }
 
   if (error) {
     return (
       <div className="d-flex justify-content-center align-items-center flex-grow-1">
         <div className="text-center p-4">
-          <i className="bi bi-exclamation-triangle display-4 text-warning"></i>
+          <i className="bi bi-shield-lock display-4 text-warning"></i>
           <p className="mt-3 text-muted">{error}</p>
         </div>
       </div>
@@ -59,14 +60,13 @@ export default function DashboardPage() {
       />
 
       <div className="d-flex flex-column flex-grow-1 bg-light">
-        {/* Report header bar */}
         <div className="bg-white border-bottom px-4 py-2 d-flex align-items-center justify-content-between" style={{ flexShrink: 0 }}>
           <div>
             <h5 className="mb-0 fw-semibold">{selectedReport?.title ?? 'Select a report'}</h5>
             <small className="text-muted">{selectedReport?.description}</small>
           </div>
           <div className="d-flex gap-2 align-items-center">
-            {selectedReport?.tags?.map((tag) => (
+            {selectedReport?.tags?.map(tag => (
               <span key={tag} className="badge bg-secondary-subtle text-secondary">{tag}</span>
             ))}
             <button className="btn btn-sm btn-outline-secondary" onClick={handleFullscreen} title="Fullscreen">
@@ -78,7 +78,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Report embed area */}
         <div className="flex-grow-1 position-relative">
           {selectedReport
             ? <ReportViewer appName={appName} report={selectedReport} />

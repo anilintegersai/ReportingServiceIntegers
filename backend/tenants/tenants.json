@@ -1,0 +1,12 @@
+[
+  {
+    "id": "acme-corp",
+    "displayName": "Acme Corporation",
+    "allowedApps": ["hr-system"]
+  },
+  {
+    "id": "globex",
+    "displayName": "Globex Corporation",
+    "allowedApps": ["finance-system"]
+  }
+]

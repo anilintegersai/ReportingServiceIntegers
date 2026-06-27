@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 
 
+# ── Power BI ──────────────────────────────────────────────────────────────────
+
 class ReportEntry(BaseModel):
     id: str
     title: str
@@ -30,5 +32,30 @@ class EmbedConfig(BaseModel):
     reportId: str
 
 
-class ErrorResponse(BaseModel):
-    error: str
+# ── Auth ──────────────────────────────────────────────────────────────────────
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+
+
+class UserInfo(BaseModel):
+    id: str
+    username: str
+    displayName: str
+    email: str
+    tenant: str
+    allowedReports: dict[str, list[str]]
+
+
+# ── Tenant ────────────────────────────────────────────────────────────────────
+
+class Tenant(BaseModel):
+    id: str
+    displayName: str
+    allowedApps: list[str]
