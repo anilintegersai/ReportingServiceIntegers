@@ -4,12 +4,13 @@
     "username": "alice",
     "displayName": "Alice Smith",
     "email": "alice@acme.com",
-    "password_hash": "$2b$12$rqQyREWq4jMBwBLeX7W7qeCwPpT0Q5z14S.UQRZ2X3BTMhG6kyN0u",
+    "password_hash": "$2b$12$qZKTrFADl8ZAsmG3MQE8tuonjRuDYyG.gtuGm5XkSSPOPZ80z6B/i",
     "tenant": "acme-corp",
     "allowedReports": {
       "hr-system": [
         "headcount-overview",
-        "attrition-analysis"
+        "attrition-analysis",
+        "new-hires"
       ]
     }
   },
@@ -18,11 +19,12 @@
     "username": "bob",
     "displayName": "Bob Jones",
     "email": "bob@acme.com",
-    "password_hash": "$2b$12$dH2VZtNeh3DMA55TUuCo9u7wkYqPm0XvxPapLcZp.xqKQlZ1K1VEe",
+    "password_hash": "$2b$12$gyV3QDW3WqqT7vJ6MCFu6eS6cEzkFZWCDQ7Krk4eMW1tWVIO.pvem",
     "tenant": "acme-corp",
     "allowedReports": {
       "hr-system": [
-        "headcount-overview"
+        "headcount-overview",
+        "new-hires"
       ]
     }
   },
@@ -31,11 +33,12 @@
     "username": "charlie",
     "displayName": "Charlie Brown",
     "email": "charlie@globex.com",
-    "password_hash": "$2b$12$YeIN1ZTM/WIub/RKg.NpNOKikmLKyj7oaUzmCBBvDcLhxzQefPEZ.",
+    "password_hash": "$2b$12$miPQGtSiO7/tk.D6tFjgeuUTUNomtStxcrgWlcuP3df83JXUJIjKK",
     "tenant": "globex",
     "allowedReports": {
       "finance-system": [
-        "monthly-pnl"
+        "sales-overview",
+        "returns-analysis"
       ]
     }
   },
@@ -44,12 +47,13 @@
     "username": "diana",
     "displayName": "Diana Prince",
     "email": "diana@globex.com",
-    "password_hash": "$2b$12$HGPyncP2ykFzF7LQQEIjseVSjthScO2qmuEm/byW3mdiOCrXPZLiq",
+    "password_hash": "$2b$12$vmaJX4OAc6qo0pjEm768dObTy2YRLpjfXFS5KWIa5HIsj9NSbDzfW",
     "tenant": "globex",
     "allowedReports": {
       "finance-system": [
-        "monthly-pnl",
-        "budget-vs-actual"
+        "sales-overview",
+        "returns-analysis",
+        "regional-performance"
       ]
     }
   }

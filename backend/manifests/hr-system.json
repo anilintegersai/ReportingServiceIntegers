@@ -8,13 +8,39 @@
       "reports": [
         {
           "id": "headcount-overview",
-          "title": "Sales & Returns Overview",
-          "description": "Sales and returns analysis sample report",
-          "powerBIReportId": "ee6c80c6-be78-4d53-8e3a-a97c8bbebf61",
+          "title": "Headcount Overview",
+          "description": "Active employees, new hires and headcount trends",
+          "powerBIReportId": "df42a8fe-9987-48bc-bb85-0b15a04c6173",
           "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
           "rlsRole": null,
           "rlsUsername": null,
-          "tags": ["Sales", "Returns"]
+          "tags": ["Workforce", "Headcount"]
+        },
+        {
+          "id": "attrition-analysis",
+          "title": "Attrition Analysis",
+          "description": "Employee separations and attrition trends",
+          "powerBIReportId": "df42a8fe-9987-48bc-bb85-0b15a04c6173",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Attrition", "Trends"]
+        }
+      ]
+    },
+    {
+      "name": "Recruitment",
+      "icon": "bi-person-plus",
+      "reports": [
+        {
+          "id": "new-hires",
+          "title": "New Hires",
+          "description": "New hire counts by department, age group and region",
+          "powerBIReportId": "df42a8fe-9987-48bc-bb85-0b15a04c6173",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Recruitment", "New Hires"]
         }
       ]
     }
