@@ -1,10 +1,46 @@
 [
   {
+    "id": "u0",
+    "username": "admin",
+    "displayName": "System Admin",
+    "email": "admin@insighthub.com",
+    "password_hash": "$2b$12$H1yOqm0l4aI2eXmL4y/TJ.nJKz0I7cVuAlxKJOmt0leAKEK/v2b4G",
+    "tenant": "admin",
+    "allowedReports": {
+      "hr-system": [
+        "headcount-overview",
+        "attrition-analysis",
+        "new-hires"
+      ],
+      "finance-system": [
+        "sales-overview",
+        "returns-analysis",
+        "regional-performance"
+      ],
+      "adventure-works": [
+        "aw-dw2020",
+        "aw-sales"
+      ],
+      "revenue-sales": [
+        "revenue-opportunities"
+      ],
+      "ai-analytics": [
+        "ai-sample",
+        "performance-analyzer"
+      ],
+      "public-health": [
+        "covid-tracking",
+        "covid-bakeoff",
+        "life-expectancy"
+      ]
+    }
+  },
+  {
     "id": "u1",
     "username": "alice",
     "displayName": "Alice Smith",
     "email": "alice@acme.com",
-    "password_hash": "$2b$12$qZKTrFADl8ZAsmG3MQE8tuonjRuDYyG.gtuGm5XkSSPOPZ80z6B/i",
+    "password_hash": "$2b$12$qWanjDKbTkmNoOE1ZIBaweKfaTGpgkomNuu5ig8r15EqMwyuQw1Je",
     "tenant": "acme-corp",
     "allowedReports": {
       "hr-system": [
@@ -19,7 +55,7 @@
     "username": "bob",
     "displayName": "Bob Jones",
     "email": "bob@acme.com",
-    "password_hash": "$2b$12$gyV3QDW3WqqT7vJ6MCFu6eS6cEzkFZWCDQ7Krk4eMW1tWVIO.pvem",
+    "password_hash": "$2b$12$tbDRaOV0v5BAiv3qgib57eTHIDfPu0eM2qgyN8R0YqFcZ1XTfyGuG",
     "tenant": "acme-corp",
     "allowedReports": {
       "hr-system": [
@@ -33,7 +69,7 @@
     "username": "charlie",
     "displayName": "Charlie Brown",
     "email": "charlie@globex.com",
-    "password_hash": "$2b$12$miPQGtSiO7/tk.D6tFjgeuUTUNomtStxcrgWlcuP3df83JXUJIjKK",
+    "password_hash": "$2b$12$BPEP0A9sZo58DECYRZol7OCg1sNZQaKMvCG7znHyCBt13Smm15OCW",
     "tenant": "globex",
     "allowedReports": {
       "finance-system": [
@@ -47,13 +83,102 @@
     "username": "diana",
     "displayName": "Diana Prince",
     "email": "diana@globex.com",
-    "password_hash": "$2b$12$vmaJX4OAc6qo0pjEm768dObTy2YRLpjfXFS5KWIa5HIsj9NSbDzfW",
+    "password_hash": "$2b$12$TeMDjtoosK7HveB5pXJuVuL3.BIqLJoaD7J/ejlDZkSwJ8SAklNH2",
     "tenant": "globex",
     "allowedReports": {
       "finance-system": [
         "sales-overview",
         "returns-analysis",
         "regional-performance"
+      ]
+    }
+  },
+  {
+    "id": "u5",
+    "username": "eve",
+    "displayName": "Eve Turner",
+    "email": "eve@contoso.com",
+    "password_hash": "$2b$12$FsDsUZdgXO9y7e6gnRkPV.Q9wPdNpdLgmy/.Oz3Ee0haZu3tsP7Nm",
+    "tenant": "contoso",
+    "allowedReports": {
+      "adventure-works": [
+        "aw-dw2020",
+        "aw-sales"
+      ],
+      "revenue-sales": [
+        "revenue-opportunities"
+      ]
+    }
+  },
+  {
+    "id": "u6",
+    "username": "frank",
+    "displayName": "Frank Miller",
+    "email": "frank@contoso.com",
+    "password_hash": "$2b$12$TMEWyPIMuy0NznVDJa/dF.TA0j6IKEMc.jKRmjQ79gWAoaUPXxnK.",
+    "tenant": "contoso",
+    "allowedReports": {
+      "adventure-works": [
+        "aw-sales"
+      ],
+      "revenue-sales": [
+        "revenue-opportunities"
+      ]
+    }
+  },
+  {
+    "id": "u7",
+    "username": "grace",
+    "displayName": "Grace Hopper",
+    "email": "grace@techcorp.com",
+    "password_hash": "$2b$12$DSUL7H6/eF4it5ChhOuy2ez2Ome0e3qmy9Io7hB6clvIFeRGMIz/m",
+    "tenant": "techcorp",
+    "allowedReports": {
+      "ai-analytics": [
+        "ai-sample",
+        "performance-analyzer"
+      ]
+    }
+  },
+  {
+    "id": "u8",
+    "username": "henry",
+    "displayName": "Henry Ford",
+    "email": "henry@techcorp.com",
+    "password_hash": "$2b$12$mG3dbdHvyTf3e3OZRzcrGeclJN4e/DCLNNOZSwpB6KMDOX3Ex5DG.",
+    "tenant": "techcorp",
+    "allowedReports": {
+      "ai-analytics": [
+        "performance-analyzer"
+      ]
+    }
+  },
+  {
+    "id": "u9",
+    "username": "ivan",
+    "displayName": "Ivan Petrov",
+    "email": "ivan@medhealth.com",
+    "password_hash": "$2b$12$v5EdpiZ628EWBm9VarZKCe5lUotWuMx879dS1GePSLAvb1yZ8nEVS",
+    "tenant": "medhealth",
+    "allowedReports": {
+      "public-health": [
+        "covid-tracking",
+        "life-expectancy"
+      ]
+    }
+  },
+  {
+    "id": "u10",
+    "username": "julia",
+    "displayName": "Julia Roberts",
+    "email": "julia@medhealth.com",
+    "password_hash": "$2b$12$qLCiTUU.mfN3V28lSXdqCOXHi.WAguaN7MIeZEeXK406o1kJNODeS",
+    "tenant": "medhealth",
+    "allowedReports": {
+      "public-health": [
+        "covid-tracking",
+        "covid-bakeoff",
+        "life-expectancy"
       ]
     }
   }

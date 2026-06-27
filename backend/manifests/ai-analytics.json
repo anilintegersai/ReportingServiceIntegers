@@ -1,0 +1,38 @@
+{
+  "appName": "AI Analytics",
+  "appIcon": "bi-cpu",
+  "categories": [
+    {
+      "name": "Machine Learning",
+      "icon": "bi-robot",
+      "reports": [
+        {
+          "id": "ai-sample",
+          "title": "Artificial Intelligence Sample",
+          "description": "AI and ML model insights — anomaly detection, forecasting and key influencers",
+          "powerBIReportId": "86b95991-f27a-41ca-99db-747184ee3be1",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["AI", "ML", "Forecasting"]
+        }
+      ]
+    },
+    {
+      "name": "Performance",
+      "icon": "bi-speedometer2",
+      "reports": [
+        {
+          "id": "performance-analyzer",
+          "title": "Performance Analyzer",
+          "description": "Report rendering performance and visual load times",
+          "powerBIReportId": "82beaf3b-8c05-4368-a852-94a5e689cebb",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Performance", "Analytics"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "appName": "Public Health",
+  "appIcon": "bi-heart-pulse",
+  "categories": [
+    {
+      "name": "Covid-19",
+      "icon": "bi-virus",
+      "reports": [
+        {
+          "id": "covid-tracking",
+          "title": "Covid-19 US Tracking",
+          "description": "US Covid-19 case counts, deaths and testing trends by state",
+          "powerBIReportId": "1548fd30-5394-4f25-87d2-6673c74a24aa",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Covid-19", "US", "Public Health"]
+        },
+        {
+          "id": "covid-bakeoff",
+          "title": "Covid Bake Off",
+          "description": "Comparative Covid-19 response analysis across countries",
+          "powerBIReportId": "40f71f0c-ce9b-4504-a9f5-f4ab88a48f95",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Covid-19", "Global", "Comparison"]
+        }
+      ]
+    },
+    {
+      "name": "Demographics",
+      "icon": "bi-globe",
+      "reports": [
+        {
+          "id": "life-expectancy",
+          "title": "Life Expectancy",
+          "description": "Global life expectancy trends by country, year and income group",
+          "powerBIReportId": "c776b3ca-9b37-42df-be84-06279c95b32a",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Demographics", "Global", "Health"]
+        }
+      ]
+    }
+  ]
+}

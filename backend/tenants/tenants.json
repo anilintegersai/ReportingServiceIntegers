@@ -8,5 +8,25 @@
     "id": "globex",
     "displayName": "Globex Corporation",
     "allowedApps": ["finance-system"]
+  },
+  {
+    "id": "contoso",
+    "displayName": "Contoso Ltd",
+    "allowedApps": ["adventure-works", "revenue-sales"]
+  },
+  {
+    "id": "techcorp",
+    "displayName": "TechCorp Inc",
+    "allowedApps": ["ai-analytics"]
+  },
+  {
+    "id": "medhealth",
+    "displayName": "MedHealth Solutions",
+    "allowedApps": ["public-health"]
+  },
+  {
+    "id": "admin",
+    "displayName": "System Administrator",
+    "allowedApps": ["hr-system", "finance-system", "adventure-works", "revenue-sales", "ai-analytics", "public-health"]
   }
 ]

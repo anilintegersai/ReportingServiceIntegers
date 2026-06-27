@@ -77,10 +77,50 @@ export default function LoginPage() {
           </form>
 
           <hr className="my-3" />
-          <div className="text-center text-muted" style={{ fontSize: '0.75rem' }}>
-            <strong>Demo accounts</strong><br />
-            alice / alice123 &nbsp;·&nbsp; bob / bob123 (Acme — HR)<br />
-            charlie / charlie123 &nbsp;·&nbsp; diana / diana123 (Globex — Finance)
+          <div className="text-muted" style={{ fontSize: '0.72rem' }}>
+            <div className="fw-semibold mb-1 text-center">Demo accounts</div>
+            <table className="w-100" style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid #dee2e6' }}>
+                  <th className="pb-1" style={{ fontWeight: 600 }}>User</th>
+                  <th className="pb-1" style={{ fontWeight: 600 }}>Password</th>
+                  <th className="pb-1" style={{ fontWeight: 600 }}>Tenant</th>
+                  <th className="pb-1" style={{ fontWeight: 600 }}>Access</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['admin',   'admin123',   'System Admin', 'All reports'],
+                  ['alice',   'alice123',   'Acme Corp',    'HR — full'],
+                  ['bob',     'bob123',     'Acme Corp',    'HR — limited'],
+                  ['charlie', 'charlie123', 'Globex',       'Finance — limited'],
+                  ['diana',   'diana123',   'Globex',       'Finance — full'],
+                  ['eve',     'eve123',     'Contoso',      'AdventureWorks + Revenue'],
+                  ['frank',   'frank123',   'Contoso',      'Sales + Revenue'],
+                  ['grace',   'grace123',   'TechCorp',     'AI Analytics — full'],
+                  ['henry',   'henry123',   'TechCorp',     'Performance only'],
+                  ['ivan',    'ivan123',    'MedHealth',    'Covid + Life Exp'],
+                  ['julia',   'julia123',   'MedHealth',    'Public Health — full'],
+                ].map(([u, p, t, a]) => (
+                  <tr key={u} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                    <td className="py-1 pe-2">
+                      <button
+                        type="button"
+                        className="btn btn-link p-0 text-decoration-none"
+                        style={{ fontSize: '0.72rem', color: '#0d6efd' }}
+                        onClick={() => { setUsername(u); setPassword(p) }}
+                      >{u}</button>
+                    </td>
+                    <td className="py-1 pe-2 text-muted">{p}</td>
+                    <td className="py-1 pe-2 text-muted">{t}</td>
+                    <td className="py-1 text-muted">{a}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-1 mb-0 text-center" style={{ fontSize: '0.68rem' }}>
+              Click a username to auto-fill credentials
+            </p>
           </div>
         </div>
       </div>

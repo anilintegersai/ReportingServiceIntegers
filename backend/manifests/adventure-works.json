@@ -1,0 +1,38 @@
+{
+  "appName": "Adventure Works",
+  "appIcon": "bi-bicycle",
+  "categories": [
+    {
+      "name": "Data Warehouse",
+      "icon": "bi-database",
+      "reports": [
+        {
+          "id": "aw-dw2020",
+          "title": "AdventureWorks DW 2020",
+          "description": "Enterprise data warehouse KPIs — sales, products and resellers",
+          "powerBIReportId": "02b98a3e-3d91-4fc4-9299-b347456ef9db",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["DW", "KPIs", "Enterprise"]
+        }
+      ]
+    },
+    {
+      "name": "Sales Analysis",
+      "icon": "bi-cart",
+      "reports": [
+        {
+          "id": "aw-sales",
+          "title": "AdventureWorks Sales",
+          "description": "Sales performance across products, regions and time",
+          "powerBIReportId": "42379922-e4b8-404a-842a-3a254dfd3c70",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Sales", "Products", "Regions"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "appName": "Revenue & Sales",
+  "appIcon": "bi-cash-coin",
+  "categories": [
+    {
+      "name": "Opportunities",
+      "icon": "bi-bullseye",
+      "reports": [
+        {
+          "id": "revenue-opportunities",
+          "title": "Revenue Opportunities",
+          "description": "Pipeline opportunities, win rates and revenue forecasts",
+          "powerBIReportId": "edba578f-5b13-475b-ba25-f73bef7e288d",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["Revenue", "Pipeline", "CRM"]
+        }
+      ]
+    }
+  ]
+}
