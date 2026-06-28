@@ -9,6 +9,7 @@ class ReportEntry(BaseModel):
     description: str = ""
     powerBIReportId: str
     powerBIWorkspaceId: str
+    embedType: str = "report"        # "report" or "dashboard"
     rlsRole: str | None = None
     rlsUsername: str | None = None
     tags: list[str] = []
@@ -30,6 +31,7 @@ class EmbedConfig(BaseModel):
     embedToken: str
     embedUrl: str
     reportId: str
+    embedType: str = "report"
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────

@@ -32,6 +32,9 @@
         "covid-tracking",
         "covid-bakeoff",
         "life-expectancy"
+      ],
+      "iot-telemetry": [
+        "iot-live-dashboard"
       ]
     }
   },
@@ -179,6 +182,19 @@
         "covid-tracking",
         "covid-bakeoff",
         "life-expectancy"
+      ]
+    }
+  },
+  {
+    "id": "u11",
+    "username": "iot",
+    "displayName": "IoT Engineer",
+    "email": "iot@iotcorp.com",
+    "password_hash": "$2b$12$1ep53fBJNZpDkLAU3lHT1eiTOFL3f0FGVW2WMyTPfXIC5W.d884ZO",
+    "tenant": "iotcorp",
+    "allowedReports": {
+      "iot-telemetry": [
+        "iot-live-dashboard"
       ]
     }
   }

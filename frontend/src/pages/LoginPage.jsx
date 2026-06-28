@@ -101,6 +101,7 @@ export default function LoginPage() {
                   ['henry',   'henry123',   'TechCorp',     'Performance only'],
                   ['ivan',    'ivan123',    'MedHealth',    'Covid + Life Exp'],
                   ['julia',   'julia123',   'MedHealth',    'Public Health — full'],
+                  ['iot',     'iot123',     'IoT Corp',     'IoT Telemetry'],
                 ].map(([u, p, t, a]) => (
                   <tr key={u} style={{ borderBottom: '1px solid #f0f0f0' }}>
                     <td className="py-1 pe-2">

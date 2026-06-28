@@ -48,35 +48,41 @@ export default function ReportViewer({ appName, report }) {
     if (!containerRef.current) return
     if (embedRef.current) powerbi.reset(containerRef.current)
 
+    const isDashboard = config.embedType === 'dashboard'
+
     embedRef.current = powerbi.embed(containerRef.current, {
-      type: 'report',
+      type: isDashboard ? 'dashboard' : 'report',
       id: config.reportId,
       embedUrl: config.embedUrl,
       accessToken: config.embedToken,
       tokenType: pbi.models.TokenType.Embed,
-      settings: {
-        navContentPaneEnabled: false,
-        filterPaneEnabled: true,
-        background: pbi.models.BackgroundType.Default,
-      },
+      settings: isDashboard
+        ? {}
+        : {
+            navContentPaneEnabled: false,
+            filterPaneEnabled: true,
+            background: pbi.models.BackgroundType.Default,
+          },
     })
 
     embedRef.current.on('loaded', async () => {
       setStatus('ready')
-      try {
-        const reportPages = await embedRef.current.getPages()
-        const visible = reportPages.filter(p => p.visibility === 0)
-        setPages(visible)
-        const active = reportPages.find(p => p.isActive)
-        setActivePage(active?.name ?? visible[0]?.name ?? null)
-      } catch (_) {
-        // page nav unavailable — silently skip
+      if (!isDashboard) {
+        try {
+          const reportPages = await embedRef.current.getPages()
+          const visible = reportPages.filter(p => p.visibility === 0)
+          setPages(visible)
+          const active = reportPages.find(p => p.isActive)
+          setActivePage(active?.name ?? visible[0]?.name ?? null)
+        } catch (_) {}
       }
     })
 
-    embedRef.current.on('pageChanged', (e) => {
-      setActivePage(e.detail?.newPage?.name ?? null)
-    })
+    if (!isDashboard) {
+      embedRef.current.on('pageChanged', (e) => {
+        setActivePage(e.detail?.newPage?.name ?? null)
+      })
+    }
 
     embedRef.current.on('error', (e) => {
       setStatus('error')

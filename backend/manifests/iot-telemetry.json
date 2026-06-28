@@ -1,0 +1,23 @@
+{
+  "appName": "IoT Telemetry",
+  "appIcon": "bi-activity",
+  "categories": [
+    {
+      "name": "Live Monitoring",
+      "icon": "bi-broadcast",
+      "reports": [
+        {
+          "id": "iot-live-dashboard",
+          "title": "Live Sensor Dashboard",
+          "description": "Real-time temperature, vibration and pressure readings from Machine-A, B and C",
+          "powerBIReportId": "46541eab-f6e9-472d-ac29-58b885c94796",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "embedType": "dashboard",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["IoT", "Real-time", "Sensors", "Telemetry"]
+        }
+      ]
+    }
+  ]
+}

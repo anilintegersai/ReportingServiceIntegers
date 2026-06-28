@@ -25,19 +25,43 @@ def get_embed_config(report: ReportEntry) -> EmbedConfig:
     headers = {"Authorization": f"Bearer {token}"}
 
     workspace_id = report.powerBIWorkspaceId
-    report_id = report.powerBIReportId
+    artifact_id = report.powerBIReportId  # holds dashboard ID for dashboards too
 
     with httpx.Client() as client:
-        # Fetch report metadata (embedUrl, datasetId)
+        if report.embedType == "dashboard":
+            meta_resp = client.get(
+                f"{POWERBI_API}/groups/{workspace_id}/dashboards/{artifact_id}",
+                headers=headers,
+                timeout=30,
+            )
+            meta_resp.raise_for_status()
+            meta = meta_resp.json()
+
+            token_resp = client.post(
+                f"{POWERBI_API}/groups/{workspace_id}/dashboards/{artifact_id}/GenerateToken",
+                headers=headers,
+                json={"accessLevel": "View"},
+                timeout=30,
+            )
+            token_resp.raise_for_status()
+            embed_token = token_resp.json()["token"]
+
+            return EmbedConfig(
+                embedToken=embed_token,
+                embedUrl=meta["embedUrl"],
+                reportId=artifact_id,
+                embedType="dashboard",
+            )
+
+        # --- report (default) ---
         meta_resp = client.get(
-            f"{POWERBI_API}/groups/{workspace_id}/reports/{report_id}",
+            f"{POWERBI_API}/groups/{workspace_id}/reports/{artifact_id}",
             headers=headers,
             timeout=30,
         )
         meta_resp.raise_for_status()
         meta = meta_resp.json()
 
-        # Build generate-token request body
         body: dict = {"accessLevel": "View"}
         if report.rlsRole:
             body["identities"] = [
@@ -49,7 +73,7 @@ def get_embed_config(report: ReportEntry) -> EmbedConfig:
             ]
 
         token_resp = client.post(
-            f"{POWERBI_API}/groups/{workspace_id}/reports/{report_id}/GenerateToken",
+            f"{POWERBI_API}/groups/{workspace_id}/reports/{artifact_id}/GenerateToken",
             headers=headers,
             json=body,
             timeout=30,
@@ -60,5 +84,6 @@ def get_embed_config(report: ReportEntry) -> EmbedConfig:
     return EmbedConfig(
         embedToken=embed_token,
         embedUrl=meta["embedUrl"],
-        reportId=report_id,
+        reportId=artifact_id,
+        embedType="report",
     )

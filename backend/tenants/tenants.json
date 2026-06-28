@@ -25,8 +25,13 @@
     "allowedApps": ["public-health"]
   },
   {
+    "id": "iotcorp",
+    "displayName": "IoT Corp",
+    "allowedApps": ["iot-telemetry"]
+  },
+  {
     "id": "admin",
     "displayName": "System Administrator",
-    "allowedApps": ["hr-system", "finance-system", "adventure-works", "revenue-sales", "ai-analytics", "public-health"]
+    "allowedApps": ["hr-system", "finance-system", "adventure-works", "revenue-sales", "ai-analytics", "public-health", "iot-telemetry"]
   }
 ]
