@@ -34,7 +34,8 @@
         "life-expectancy"
       ],
       "iot-telemetry": [
-        "iot-live-dashboard"
+        "iot-live-dashboard",
+        "iot-telemetry-report"
       ]
     }
   },
@@ -194,7 +195,8 @@
     "tenant": "iotcorp",
     "allowedReports": {
       "iot-telemetry": [
-        "iot-live-dashboard"
+        "iot-live-dashboard",
+        "iot-telemetry-report"
       ]
     }
   }

@@ -16,6 +16,17 @@
           "rlsRole": null,
           "rlsUsername": null,
           "tags": ["IoT", "Real-time", "Sensors", "Telemetry"]
+        },
+        {
+          "id": "iot-telemetry-report",
+          "title": "Telemetry Analysis",
+          "description": "Drill-down analysis of machine temperature, vibration and pressure with cross-filtering by machine",
+          "powerBIReportId": "d567b7af-21c0-489c-8452-e63ac9e8d0b7",
+          "powerBIWorkspaceId": "643b655f-10c9-46fb-8ee9-0e85a0b69d04",
+          "embedType": "report",
+          "rlsRole": null,
+          "rlsUsername": null,
+          "tags": ["IoT", "Analysis", "Drill-down", "Telemetry"]
         }
       ]
     }
